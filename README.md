@@ -1,1 +1,1 @@
-# java_dsa
+This repo was created for the training for us, the aditya university final year students on java, dsa and problem solving. In this training we focused on core java concepts, basic to advance data structures and algorithms and scenario based problem solving. The aim was to prepare the students for company interviews
