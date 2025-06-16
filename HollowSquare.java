@@ -15,10 +15,9 @@ public class HollowSquare {
 		for (int i = 1; i <= number; i++) {
 			for (int j = 1; j <= number; j++) {
 				if (i == j || i + j == number + 1 || i == 1 || i == number || j == 1 || j == number) {
-					if(i == (number / 2) + 1 && j == (number / 2) + 1) {
+					if (i == (number / 2) + 1 && j == (number / 2) + 1) {
 						System.out.print("@");
-					}
-					else {
+					} else {
 						System.out.print("*");
 					}
 				} else {
