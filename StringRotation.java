@@ -12,9 +12,9 @@ public class StringRotation {
         rotatedString = scanner.nextLine();
 
         if (isRotated(originalString, rotatedString)) {
-            System.out.println("Yes. The second string is a rotation of the first string.");
+            System.out.println(1);
         } else {
-            System.out.println("No. The second string is NOT a rotation of the first string.");
+            System.out.println(-1);
         }
 
         scanner.close();
