@@ -23,7 +23,8 @@ public class KaprekarNumber {
             return count;
         }
 
-        String numStr = String.format("%04d", number);
+        // String numStr = String.format("%04d", number);
+        String numStr = String.valueOf(number);
         int[] arr = new int[4];
         for (int i = 0; i < 4; i++) {
             arr[i] = numStr.charAt(i) - '0';
