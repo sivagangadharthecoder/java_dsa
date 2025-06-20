@@ -13,7 +13,7 @@ class SpiralMatrix {
         System.out.println(result);
     }
 
-    public static List<String> spiralOrder(String[][] matrix) {
+    private static List<String> spiralOrder(String[][] matrix) {
         List<String> list = new ArrayList<>();
 
         int rowBegin = 0, rowEnd = matrix.length - 1;
