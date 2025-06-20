@@ -10,7 +10,6 @@ public class SinglyList {
 
     public SinglyList() {
         head = null;
-        System.out.println("An empty list is created");
     }
 
     public Node getHead() {
@@ -85,7 +84,7 @@ public class SinglyList {
         }
         if (position == 1) {
             newNode.setLink(head);
-            head.setLink(newNode);
+            head = newNode;
             return;
         }
         Node temp = head;
@@ -94,6 +93,12 @@ public class SinglyList {
             temp = temp.getLink();
             count++;
         }
+
+        if (temp.getLink() == null && count < position) {
+            System.out.println("Invalid position");
+            return;
+        }
+
         if (temp.getLink() != null) { // insert new-node in between
             newNode.setLink(temp.getLink());
             temp.setLink(newNode);
