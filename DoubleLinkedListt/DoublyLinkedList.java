@@ -19,11 +19,10 @@ public class DoublyLinkedList {
         return new DoublyNode(person);
     }
 
-    // Insert at front of the list
     public void insertAtFront() {
         DoublyNode newNode = createNode();
 
-        if (head == null) { // List is empty
+        if (head == null) { 
             head = newNode;
             tail = newNode;
         } else {
@@ -34,11 +33,10 @@ public class DoublyLinkedList {
         System.out.println("Inserted " + newNode + " at front");
     }
 
-    // Insert at rear of the list
     public void insertAtRear() {
         DoublyNode newNode = createNode();
 
-        if (tail == null) { // List is empty
+        if (tail == null) { 
             head = newNode;
             tail = newNode;
         } else {
