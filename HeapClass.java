@@ -42,7 +42,7 @@ public class HeapClass {
         if (largest != nodeIndex) {
             swapHeap(arr, nodeIndex, largest);
             heapify(arr, heapSize, largest);
-            
+
         }
     }
 
