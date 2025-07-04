@@ -1,7 +1,6 @@
 import java.util.HashSet;
 
 public class CommonUniqueElements {
-
     public static void main(String[] args) {
         int[] arr1 = { 4, 5, 9, 9 };
         int[] arr2 = { 9, 4, 9, 8, 4, 5 };
