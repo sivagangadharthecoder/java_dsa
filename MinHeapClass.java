@@ -1,10 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
-
 public class MinHeapClass {
 
     private static List<Integer> arr = new ArrayList<>();
-
     public static void main(String[] args) {
         arr.add(10);
         arr.add(3);
