@@ -1,6 +1,6 @@
 public class UnorderdedIncreasing {
     public static void main(String[] args) {
-        int[] arr = { 10, 9, 2, 5, 3, 7 };
+        int[] arr = { 1, 3, 2, 4, 3, 5, 4, 6 };
         System.out.println("Length of longest unordered increasing subsequence is: " + findUnorderedIncreasing(arr));
     }
 
