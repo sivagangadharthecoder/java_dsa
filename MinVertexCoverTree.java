@@ -1,67 +1,56 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 
 public class MinVertexCoverTree {
+    static List<Integer>[] tree;
+    static int[][] dp;
 
-    private static List<Integer>[] tree;
-    private static boolean[] visited;
-    private static int[][] dp;
-
-    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        tree = (ArrayList<Integer>[]) new ArrayList[n + 1];
+        @SuppressWarnings("unchecked")
+        List<Integer>[] tempTree = new ArrayList[n + 1];
+        for (int i = 1; i <= n; i++)
+            tempTree[i] = new ArrayList<>();
 
-        visited = new boolean[n + 1];
-        dp = new int[n + 1][2];
-
-        for (int i = 1; i <= n; i++) {
-            tree[i] = new ArrayList<>();
-        }
+        tree = tempTree;
 
         for (int i = 0; i < n - 1; i++) {
-            int u = sc.nextInt();
-            int v = sc.nextInt();
+            int u = sc.nextInt(), v = sc.nextInt();
             tree[u].add(v);
             tree[v].add(u);
         }
 
-        bfsDP(1);
-        System.out.println(Math.min(dp[1][0], dp[1][1]));
+        dp = new int[n + 1][2];
+        for (int[] row : dp)
+            Arrays.fill(row, -1);
+
+        System.out.println(dfs(1, 0, -1));
 
         sc.close();
     }
 
-    public static void bfsDP(int root) {
-        Stack<Integer> stack = new Stack<>();
-        Queue<Integer> queue = new LinkedList<>();
-
-        queue.offer(root);
-        visited[root] = true;
-
-        while (!queue.isEmpty()) {
-            int node = queue.poll();
-            stack.push(node);
-            for (int child : tree[node]) {
-                if (!visited[child]) {
-                    visited[child] = true;
-                    queue.offer(child);
+    static int dfs(int u, int take, int par) {
+        if (dp[u][take] != -1)
+            return dp[u][take];
+        int res = 0;
+        if (take == 1) {
+            res = 1;
+            for (int v : tree[u]) {
+                if (v != par) {
+                    res += Math.min(dfs(v, 0, u), dfs(v, 1, u));
+                }
+            }
+        } else {
+            for (int v : tree[u]) {
+                if (v != par) {
+                    res += dfs(v, 1, u);
                 }
             }
         }
-
-        while (!stack.isEmpty()) {
-            int node = stack.pop();
-            dp[node][0] = 0;
-            dp[node][1] = 1;
-
-            for (int child : tree[node]) {
-                if (child != node && visited[child]) {
-                    dp[node][0] += dp[child][1];
-                    dp[node][1] += Math.min(dp[child][0], dp[child][1]);
-                }
-            }
-        }
+        return dp[u][take] = res;
     }
 }
