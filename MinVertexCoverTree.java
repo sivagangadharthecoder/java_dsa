@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Arrays;
 
 public class MinVertexCoverTree {
-    static List<Integer>[] tree;
-    static int[][] dp;
+    private static List<Integer>[] tree;
+    private static int[][] dp;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
