@@ -8,23 +8,19 @@ class BFS_Traversal {
 
         int V = adj.size();
         boolean[] visited = new boolean[V];
+        Queue<Integer> queue = new LinkedList<>();
 
-        for (int i = 0; i < V; i++) {
-            if (!visited[i]) {
-                Queue<Integer> queue = new LinkedList<>();
-                queue.add(i);
-                visited[i] = true;
+        queue.add(0);
+        visited[0] = true;
 
-                while (!queue.isEmpty()) {
-                    int current = queue.poll();
-                    result.add(current);
+        while (!queue.isEmpty()) {
+            int current = queue.poll();
+            result.add(current);
 
-                    for (int neighbor : adj.get(current)) {
-                        if (!visited[neighbor]) {
-                            visited[neighbor] = true;
-                            queue.add(neighbor);
-                        }
-                    }
+            for (int neighbor : adj.get(current)) {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.add(neighbor);
                 }
             }
         }
