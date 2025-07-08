@@ -33,11 +33,15 @@ class BFS_Traversal {
 
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
-        adj.add(new ArrayList<>(Arrays.asList(1, 3)));
-        adj.add(new ArrayList<>(Arrays.asList(0, 2, 4)));
-        adj.add(new ArrayList<>(Arrays.asList(1)));
-        adj.add(new ArrayList<>(Arrays.asList(0, 4)));
-        adj.add(new ArrayList<>(Arrays.asList(1, 3)));
+        adj.add(new ArrayList<>());
+        adj.add(new ArrayList<>(Arrays.asList(2, 3, 4)));
+        adj.add(new ArrayList<>(Arrays.asList(6)));
+        adj.add(new ArrayList<>(Arrays.asList(8, 7)));
+        adj.add(new ArrayList<>());
+        adj.add(new ArrayList<>());
+        adj.add(new ArrayList<>());
+        adj.add(new ArrayList<>());
+        adj.add(new ArrayList<>());
 
         ArrayList<Integer> bfsTraversal = solution.bfs(adj);
 
