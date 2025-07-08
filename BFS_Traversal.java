@@ -10,8 +10,8 @@ class BFS_Traversal {
         boolean[] visited = new boolean[V];
         Queue<Integer> queue = new LinkedList<>();
 
-        queue.add(0);
-        visited[0] = true;
+        queue.add(1);
+        visited[1] = true;
 
         while (!queue.isEmpty()) {
             int current = queue.poll();
@@ -44,7 +44,7 @@ class BFS_Traversal {
         adj.add(new ArrayList<>());
 
         ArrayList<Integer> bfsTraversal = solution.bfs(adj);
-
+        System.out.println("adjacency list: " + adj);
         System.out.println("BFS Traversal: " + bfsTraversal);
     }
 }
