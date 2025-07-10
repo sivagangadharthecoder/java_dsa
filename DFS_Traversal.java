@@ -13,8 +13,9 @@ public class DFS_Traversal {
         return result;
     }
 
-    private static void dfsHelper(int node, ArrayList<ArrayList<Integer>> adj,
-            boolean[] visited, ArrayList<Integer> result) {
+    private static void dfsHelper(int node, ArrayList<ArrayList<Integer>> adj, boolean[] visited,
+            ArrayList<Integer> result) {
+
         visited[node] = true;
         result.add(node);
 
