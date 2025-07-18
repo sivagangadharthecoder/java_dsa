@@ -11,6 +11,7 @@ class Dog implements Animal {
     public void eat() {
         System.out.println("Dog is eating");
         int val1 = 100; // local variable has higher preference
+        // val2 = 200; this will cause a compile-time error
         System.out.println(val1);
         System.out.println(val2);
     }
